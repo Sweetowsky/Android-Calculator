@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
             textEquation.delete(0, textEquation.length());
             refreshText();
         }
-
     }
     public void clearLastSignButtonClick(View view ){
         int lengthEquation = textEquation.length();
