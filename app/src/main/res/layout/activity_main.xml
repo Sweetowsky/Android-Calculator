@@ -16,7 +16,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginLeft="210dp"
         android:layout_marginBottom="18dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="." />
 
     <Button
@@ -29,7 +29,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginBottom="105dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="7" />
 
     <Button
@@ -42,7 +42,7 @@
         android:layout_marginStart="114dp"
         android:layout_marginLeft="114dp"
         android:layout_marginBottom="105dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="8" />
 
     <Button
@@ -55,7 +55,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginLeft="210dp"
         android:layout_marginBottom="105dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="9" />
 
     <Button
@@ -68,7 +68,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginBottom="268dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="1" />
 
     <Button
@@ -81,7 +81,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginBottom="189dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="4" />
 
     <Button
@@ -94,7 +94,7 @@
         android:layout_marginStart="114dp"
         android:layout_marginLeft="114dp"
         android:layout_marginBottom="189dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="5" />
 
     <Button
@@ -107,7 +107,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginLeft="210dp"
         android:layout_marginBottom="189dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="6" />
 
     <Button
@@ -120,7 +120,7 @@
         android:layout_marginStart="114dp"
         android:layout_marginLeft="114dp"
         android:layout_marginBottom="18dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="0" />
 
     <TextView
@@ -137,7 +137,6 @@
 
     <Button
         android:id="@+id/buttonExit"
-        android:background="#00796B"
         android:layout_width="84dp"
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
@@ -146,6 +145,8 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginBottom="351dp"
+        android:background="#00796B"
+        android:onClick="exitButtonClick"
         android:text="EXIT" />
 
     <Button
@@ -158,7 +159,7 @@
         android:layout_marginStart="114dp"
         android:layout_marginLeft="114dp"
         android:layout_marginBottom="268dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="2" />
 
     <Button
@@ -171,7 +172,7 @@
         android:layout_marginStart="114dp"
         android:layout_marginLeft="114dp"
         android:layout_marginBottom="351dp"
-        android:onClick="clearAllSign"
+        android:onClick="clearAllSignsButtonClick"
         android:text="CLEAR" />
 
     <Button
@@ -184,7 +185,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginLeft="210dp"
         android:layout_marginBottom="351dp"
-        android:onClick="clearLastSign"
+        android:onClick="clearLastSignButtonClick"
         android:text="C" />
 
     <Button
@@ -198,7 +199,7 @@
         android:layout_marginLeft="298dp"
         android:layout_marginBottom="18dp"
         android:background="#E64A19"
-        android:onClick="makeCalculation"
+        android:onClick="makeCalculationClick"
         android:text="=" />
 
 
@@ -212,7 +213,7 @@
         android:layout_marginStart="298dp"
         android:layout_marginLeft="298dp"
         android:layout_marginBottom="105dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="+" />
 
     <Button
@@ -225,7 +226,7 @@
         android:layout_marginStart="298dp"
         android:layout_marginLeft="298dp"
         android:layout_marginBottom="189dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="-" />
 
     <Button
@@ -238,7 +239,7 @@
         android:layout_marginStart="298dp"
         android:layout_marginLeft="298dp"
         android:layout_marginBottom="268dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="*" />
 
     <Button
@@ -251,7 +252,7 @@
         android:layout_marginStart="298dp"
         android:layout_marginLeft="298dp"
         android:layout_marginBottom="350dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="/" />
 
     <Button
@@ -264,7 +265,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginLeft="210dp"
         android:layout_marginBottom="268dp"
-        android:onClick="addToEquation"
+        android:onClick="numberOrOperatorButtonClick"
         android:text="3" />
 
     <Button
@@ -278,6 +279,6 @@
         android:layout_marginLeft="18dp"
         android:layout_marginBottom="18dp"
         android:background="#00796B"
-        android:onClick="goHistory"
+        android:onClick="historyButtonClick"
         android:text="HISTORY" />
 </RelativeLayout>
