@@ -47,12 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberOrOperatorButtonClick(View view){
-        int lengthOfEquation = textEquation.length() - 1;
         TextView button = (TextView) view;
         String character = button.getText().toString();
-        if (lengthOfEquation > 13) {
-            return;
-        }
         textEquation.append(character);
         refreshText();
     }

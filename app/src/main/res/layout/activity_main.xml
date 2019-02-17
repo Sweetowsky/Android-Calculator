@@ -127,12 +127,14 @@
         android:id="@+id/textView"
         android:layout_width="366dp"
         android:layout_height="73dp"
+        android:layout_above="@+id/buttonClear"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"
         android:layout_marginLeft="13dp"
         android:layout_marginTop="11dp"
+        android:layout_marginBottom="-4dp"
         android:textSize="36sp" />
 
     <Button
