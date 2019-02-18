@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import net.objecthunter.exp4j.Expression;
-import net.objecthunter.exp4j.ExpressionBuilder;
 
+import pl.lodz.uni.math.slodkowski.bartlomiej.androidcalculator.calculator.Calculator;
 import pl.lodz.uni.math.slodkowski.bartlomiej.androidcalculator.database.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private StringBuilder textEquation = new StringBuilder();
+    private final Calculator calculator = new Calculator();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,55 +27,42 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearAllSignsButtonClick(View view ){
-        int lengthEquation = textEquation.length();
-        if (lengthEquation < 1) {
-            refreshText();
-        } else {
-            textEquation.delete(0, textEquation.length());
-            refreshText();
-        }
+        calculator.clear();
+        refreshText();
     }
     public void clearLastSignButtonClick(View view ){
-        int lengthEquation = textEquation.length();
-        if (lengthEquation < 1) {
-            refreshText();
-        } else {
-            textEquation.delete(textEquation.length() - 1, textEquation.length());
-            refreshText();
-        }
+        calculator.clearLastSign();
+        refreshText();
 
     }
 
     public void numberOrOperatorButtonClick(View view){
         TextView button = (TextView) view;
         String character = button.getText().toString();
-        textEquation.append(character);
+        calculator.append(character);
         refreshText();
     }
     private void refreshText() {
         TextView textView = findViewById(R.id.textView);
-        textView.setText(textEquation.toString());
+        textView.setText(calculator.getTextEquation().toString());
     }
     public void makeCalculationClick(View view) {
-        int lengthEquation = textEquation.length();
-        if (lengthEquation < 1) {
-            return;
+        int lengthOfEquation=calculator.getTextEquation().length();
+
+        if(lengthOfEquation>0){
+            String result;
+            TextView textView = findViewById(R.id.textView);
+            result=calculator.calculateEquation();
+            textView.setText(result);
+
+            if (result=="NaN") {
+            } else {
+                DatabaseHelper database = new DatabaseHelper(this);
+                database.setData(calculator.getTextEquation().toString() + " = " + result);
+            }
         }
-        double result;
-        try {
-            Expression expression = new ExpressionBuilder(textEquation.toString()).build();
-            result = expression.evaluate();
-        } catch (Exception e) {
-            result = Double.NaN;
-        }
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(String.valueOf(result));
-        if (Double.isNaN(result)) {
-        } else {
-            DatabaseHelper database = new DatabaseHelper(this);
-            database.setData(textEquation.toString() + " = " + result);
-        }
-        textEquation.delete(0, textEquation.length());
+
+        calculator.clear();
 
     }
     public void exitButtonClick(View view)
