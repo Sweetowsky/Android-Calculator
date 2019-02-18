@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -37,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void numberOrOperatorButtonClick(View view){
-        TextView button = (TextView) view;
-        String character = button.getText().toString();
-        calculator.append(character);
+        Button button =(Button) view;
+        String buttonText = button.getText().toString();
+        calculator.append(buttonText);
         refreshText();
     }
     private void refreshText() {
